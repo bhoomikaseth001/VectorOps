@@ -1,11 +1,19 @@
-import { Outlet, useMatches } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import Sidebar from './Sidebar.jsx';
 import Topbar from './Topbar.jsx';
 
+const TITLES = {
+  '/': 'Dashboard',
+  '/vehicles': 'Vehicle Registry',
+  '/drivers': 'Drivers',
+  '/maintenance': 'Maintenance',
+  '/trips': 'Trips',
+  '/expenses': 'Fuel & Expenses',
+};
+
 export default function AppLayout() {
-  const matches = useMatches();
-  const current = [...matches].reverse().find((m) => m.handle?.title);
-  const title = current?.handle?.title || 'TransitOps';
+  const { pathname } = useLocation();
+  const title = TITLES[pathname] || 'TransitOps';
 
   return (
     <div className="flex min-h-screen bg-paper">
