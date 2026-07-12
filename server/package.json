@@ -1,7 +1,7 @@
 {
-  "name": "server",
+  "name": "transitops-backend-mysql",
   "version": "1.0.0",
-  "description": "TransitOps Smart Transport Operations Platform - Backend",
+  "description": "TransitOps Smart Transport Operations Platform - Backend (MySQL/Sequelize)",
   "main": "server.js",
   "scripts": {
     "dev": "nodemon server.js",
@@ -14,7 +14,8 @@
     "express": "^4.19.2",
     "json2csv": "^6.0.0-alpha.2",
     "jsonwebtoken": "^9.0.2",
-    "mongoose": "^8.5.0"
+    "mysql2": "^3.11.0",
+    "sequelize": "^6.37.3"
   },
   "devDependencies": {
     "nodemon": "^3.1.4"
